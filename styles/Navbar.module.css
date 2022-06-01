@@ -1,0 +1,35 @@
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 4rem;
+    color : #166088
+  } 
+
+.navbar {
+    background-color: #166088;
+    margin-top: 0px;
+}
+
+.navbar ul {
+    margin: 0px;
+    height: 3rem;
+    list-style: none;
+    display: flex;
+}
+
+.navbar li {
+    height: 3rem;
+}
+
+.navbar li:hover {
+    background-color: #267098; 
+}
+
+.navbar a {
+    padding: 0 0.5rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    display: flex;
+}
