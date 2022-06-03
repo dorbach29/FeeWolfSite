@@ -1,0 +1,36 @@
+.main {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 3rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+}
+
+.table thead{
+    border-bottom: 2px solid #7479c2;
+    border-radius: 25px;
+}
+
+.table tr{
+    padding: 0.4rem 0;
+    height: 1.8rem;
+}
+
