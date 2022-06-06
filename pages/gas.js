@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import Head from 'next/head'
 import Image from 'next/Image'
+import TR from '../components/gas/TableRow'
 import styles from '../styles/Gas.module.css'
 
 
@@ -11,9 +12,69 @@ import styles from '../styles/Gas.module.css'
 export default function Gas() {
 
   /**
+   * Data to be used to populate the table
+   * In the future this would probably be pulled from an API using getServerSideProps()
+   * This might have to be made into a state
+   */
+  const coins = [ {
+    logoLink : "/EthLogo.png",
+    logoDesc : "Ethereum Logo",
+    name : "Ethereum",
+    currPrice : 1200,
+    oneHourPrice: 109,
+    tfHourPrice: 150,
+    socketEvent: "EthUpdate",
+    key : 1,
+  },
+  {
+    logoLink: "/SolLogo.png",
+    logoDesc : "Solano Logo",
+    name : "Solano",
+    currPrice: 87,
+    oneHourPrice: 120,
+    tfHourPrice: 111,
+    socketEvent: "SolUpdate",
+    key: 2,
+
+  },
+  {
+    logoLink: "/CarLogo.png",
+    logoDesc : "Cardano Logo",
+    name : "Cardano",
+    currPrice: 91,
+    oneHourPrice: 178,
+    tfHourPrice: 123,
+    socketEvent: "CarUpdate",
+    key: 3,
+
+  },
+  {
+    logoLink: "/IcpLogo.png",
+    logoDesc : "Internet Computer Logo",
+    name : "Internet Computer",
+    currPrice: 87,
+    oneHourPrice: 120,
+    tfHourPrice: 111,
+    socketEvent: "IcpUpdate",
+    key: 4,
+
+  },
+  {
+    logoLink: "/DotLogo.png",
+    logoDesc : "Polkadot Logo",
+    name : "Polkadot",
+    currPrice: 87,
+    oneHourPrice: 120,
+    tfHourPrice: 111,
+    socketEvent: "DotUpdate",
+    key: 5,
+  },
+ ] 
+
+  /**
    *  Handles all websocket communication for now
    *  this includes updating the gas fee when socket.io sends an update
-  */
+  
   useEffect(()=> {
     console.log("Connecting to the socket")
     const socket = io("http://localhost:5000");
@@ -22,8 +83,10 @@ export default function Gas() {
     })
   }, [])
 
+  */
+
   /** React state for the ether gas fee*/ 
-  const [etherPrice, setEtherPrice] = useState(0);
+  //const [etherPrice, setEtherPrice] = useState(0);
 
 
   //Layout of the gasfee page
@@ -49,45 +112,11 @@ export default function Gas() {
             </tr>
           </thead>
           <tbody>
-            {/**A table row could be a possible component of its own */}
-            <tr>
-              <td>
-                <Image
-                src="/EthLogo.png"
-                alt="Ethereum Logo"
-                width={15}
-                height={17}>
-                </Image>
-                Ethereum
-              </td>
-              <td>1200</td>
-              <td>107</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>Solano</td>
-              <td>1200</td>
-              <td>107</td>
-              <td>120</td>   
-            </tr>    
-            <tr>
-              <td>Cardano</td>
-              <td>1200</td>
-              <td>107</td>
-              <td>120</td>
-            </tr>
-            <tr>
-              <td>Internet Computer</td>
-              <td>1200</td>
-              <td>107</td>
-              <td>120</td>            
-            </tr>
-            <tr>
-              <td>Polkadot</td>
-              <td>1200</td>
-              <td>107</td>
-              <td>120</td>            
-            </tr>
+            {/**Loads different rows of coins */}
+            {coins.map((coin)=> {
+              return (<TR key={coin.key} data={coin}></TR>);
+            })}
+ 
           </tbody>
         </table>
         
