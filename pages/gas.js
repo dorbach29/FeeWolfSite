@@ -20,9 +20,13 @@ export default function Gas() {
     logoLink : "/EthLogo.png",
     logoDesc : "Ethereum Logo",
     name : "Ethereum",
-    currPrice : 1200,
-    oneHourPrice: 109,
-    tfHourPrice: 150,
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFee: 'loading',
     socketEvent: "EthUpdate",
     key : 1,
   },
@@ -30,9 +34,13 @@ export default function Gas() {
     logoLink: "/SolLogo.png",
     logoDesc : "Solano Logo",
     name : "Solano",
-    currPrice: 87,
-    oneHourPrice: 120,
-    tfHourPrice: 111,
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFee: 'loading',
     socketEvent: "SolUpdate",
     key: 2,
 
@@ -41,9 +49,13 @@ export default function Gas() {
     logoLink: "/CarLogo.png",
     logoDesc : "Cardano Logo",
     name : "Cardano",
-    currPrice: 91,
-    oneHourPrice: 178,
-    tfHourPrice: 123,
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFee: 'loading',
     socketEvent: "CarUpdate",
     key: 3,
 
@@ -52,9 +64,13 @@ export default function Gas() {
     logoLink: "/IcpLogo.png",
     logoDesc : "Internet Computer Logo",
     name : "Internet Computer",
-    currPrice: 87,
-    oneHourPrice: 120,
-    tfHourPrice: 111,
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFee: 'loading',
     socketEvent: "IcpUpdate",
     key: 4,
 
@@ -63,31 +79,17 @@ export default function Gas() {
     logoLink: "/DotLogo.png",
     logoDesc : "Polkadot Logo",
     name : "Polkadot",
-    currPrice: 87,
-    oneHourPrice: 120,
-    tfHourPrice: 111,
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFee: 'loading',
     socketEvent: "DotUpdate",
     key: 5,
   },
  ] 
-
-  /**
-   *  Handles all websocket communication for now
-   *  this includes updating the gas fee when socket.io sends an update
-  
-  useEffect(()=> {
-    console.log("Connecting to the socket")
-    const socket = io("http://localhost:5000");
-    socket.on("EtherUpdate", (args)=>{
-      setEtherPrice(args.GasFee)
-    })
-  }, [])
-
-  */
-
-  /** React state for the ether gas fee*/ 
-  //const [etherPrice, setEtherPrice] = useState(0);
-
 
   //Layout of the gasfee page
   return (
@@ -106,9 +108,11 @@ export default function Gas() {
           <thead>
             <tr className={styles.row}>
               <th>Name</th>
-              <th>GasFee(gwei)</th>
-              <th>1hr(gwei)</th>
-              <th>24hr(gwei)</th>
+              <th>Low Prior(gwei)</th>
+              <th>Med Prior(gwei)</th>
+              <th>High Prior(gwei)</th>
+              <th>1h Fee(%)</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>

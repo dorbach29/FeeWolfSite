@@ -18,6 +18,7 @@
 .table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 0.5rem;
 }
 
 .table th {
@@ -25,17 +26,34 @@
 }
 
 .table thead{
-    border-bottom: 2px solid #7479c2;
+    border-bottom: 1px solid #7479c2;
     border-radius: 25px;
+    border-top: 1px solid #7479c2;
+    height: 2rem;
+    margin-top: 0.5rem;
 }
 
-.table tr{
-    padding: 0.4rem 0;
-    height: 1.8rem;
+
+
+.dataRow {
+    padding: 1.675rem 0;
+    height: 3.75rem;
+    border-bottom: 1px solid #9499e2;
 }
 
 .coinName{
     vertical-align: middle;
+}
+
+.coinNameContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.coinNameContainer p{
+    margin: 0.5em 0;
+    font-weight: bold;
 }
 
 

@@ -10,40 +10,49 @@ import styles from "../../styles/Gas.module.css"
  *  logoLink : string - http reference to the logo
  *  logoDesc : string - description of the logo (For SEO)
  *  name : string - the name of the coin
- *  currPrice : Number - the current price of the coin
- *  oneHourPrice : Number - the price of the coin one hour ago
- *  tfHourPrice: Number - the price of the coin twenty four hours ago
+ *  fees : obj - containes lowFee medFee and highFee
+ *  fees.lowFee : Number - the current low priority price of the coin
+ *  fees.medFee : Number - the current med priority of the coin
+ *  fees.highFee Number - the current high priority of the coin
+ *  price: Number - the current price of the coin
+ *  hrFee: Number - the price one hour ago of the med prior fee
+ *  socketEvent: String - the name of the socket.io event to listen to
  * }
  */
 export default function TableRow(props){
-    let data = props.data
+    let data = props.data;
+    let feeProps = data.fees;
 
     //State that represents current gasFee for this coin
-    const [price, setPrice] = useState(data.currPrice);
+    const [fees, setFees] = useState(feeProps);
 
-    //Updates the current gasFees on the proper socket events
+    //Updates the current fees object on the proper socket events
     useEffect(()=> {
       socket.on(data.socketEvent, (args)=>{
-        setPrice(args.GasFee);
+        setFees(args);
       })
     })
         
     return (    
-    <tr>
+    <tr className={styles.dataRow}>
       <td className={styles.coinName}>
-        <div className={styles.Logo}>
-          <Image
-          src={data.logoLink}
-          alt={data.logoDesc}
-          width={16}
-          height={18}>
-          </Image>
+        <div className={styles.coinNameContainer}>
+          <div className={styles.Logo}>
+            <Image
+            src={data.logoLink}
+            alt={data.logoDesc}
+            width={20}
+            height={23}>
+            </Image>
+          </div>
+          <p>{data.name}</p>
         </div>
-        {data.name}
       </td>
-      <td>{price}</td>
-      <td>{data.oneHourPrice}</td>
-      <td>{data.tfHourPrice}</td>
+      <td>{fees.lowFee}</td> 
+      <td>{fees.medFee}</td>
+      <td>{fees.highFee}</td>
+      <td>{data.hrFee}</td>
+      <td>{data.price}</td>
     </tr>
     );
 }
