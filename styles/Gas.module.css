@@ -41,6 +41,10 @@
     border-bottom: 1px solid #9499e2;
 }
 
+.dataRow td{
+    font-weight: 500;
+}
+
 .coinName{
     vertical-align: middle;
 }

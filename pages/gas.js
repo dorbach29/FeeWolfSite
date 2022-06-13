@@ -26,9 +26,54 @@ export default function Gas() {
       highFee: 'loading',
     },
     price : 'loading',
-    hrFee: 'loading',
+    hrFeeAvg: 'loading',
     socketEvent: "EthUpdate",
     key : 1,
+  },
+  {
+    logoLink: "/BnbLogo.png",
+    logoDesc : "Binance Coin Logo",
+    name : "Binance Coin",
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFeeAvg: 'loading',
+    socketEvent: "BnbUpdate",
+    key: 2,
+
+  },
+  {
+    logoLink: "/FtmLogo.png",
+    logoDesc : "Phantom Logo",
+    name : "Phantom",
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFeeAvg: 'loading',
+    socketEvent: "FtmUpdate",
+    key: 3,
+
+  },
+  {
+    logoLink: "/MaticLogo.png",
+    logoDesc : "Matic Logo",
+    name : "Matic",
+    fees :  { 
+      lowFee : 'loading',
+      medFee: 'loading',
+      highFee: 'loading',
+    },
+    price : 'loading',
+    hrFeeAvg: 'loading',
+    socketEvent: "MaticUpdate",
+    key: 4,
+
   },
   {
     logoLink: "/SolLogo.png",
@@ -40,7 +85,7 @@ export default function Gas() {
       highFee: 'loading',
     },
     price : 'loading',
-    hrFee: 'loading',
+    hrFeeAvg: 'loading',
     socketEvent: "SolUpdate",
     key: 2,
 
@@ -55,7 +100,7 @@ export default function Gas() {
       highFee: 'loading',
     },
     price : 'loading',
-    hrFee: 'loading',
+    hrFeeAvg: 'loading',
     socketEvent: "CarUpdate",
     key: 3,
 
@@ -70,7 +115,7 @@ export default function Gas() {
       highFee: 'loading',
     },
     price : 'loading',
-    hrFee: 'loading',
+    hrFeeAvg: 'loading',
     socketEvent: "IcpUpdate",
     key: 4,
 
@@ -85,7 +130,7 @@ export default function Gas() {
       highFee: 'loading',
     },
     price : 'loading',
-    hrFee: 'loading',
+    hrFeeAvg: 'loading',
     socketEvent: "DotUpdate",
     key: 5,
   },
@@ -104,6 +149,9 @@ export default function Gas() {
         <h3 className={styles.title}>
           Gas Prices Today
         </h3>
+        <p>
+          The table shows the price per unit of gas for the respective coins. To calculate the price for a particular transaction consult the coins documentation
+        </p>
         <table className={styles.table}>
           <thead>
             <tr className={styles.row}>
