@@ -26,6 +26,7 @@ export default function TableRow(props){
 
     //State that represents current gasFee for this coin
     const [fees, setFees] = useState(feeProps);
+    const [getPrice, setPrice] = useState(data.price);
     const [getHrFeeAvg, setHrFeeAvg] = useState(data.hrFeeAvg);
 
     //Updates the current fees object on the proper socket events
@@ -33,6 +34,7 @@ export default function TableRow(props){
       socket.on(data.socketEvent, (args)=>{
         if(args.fees.medFee != -1) setFees(args.fees);
         if(args.hrFeeAvg != -1 && args.hrFeeAvg != getHrFeeAvg) setHrFeeAvg(args.hrFeeAvg);
+        if(args.price != -1 && args.price != getPrice) setPrice(args.price);
       })
     })
         
@@ -55,7 +57,7 @@ export default function TableRow(props){
       <td>{fees.medFee}</td>
       <td>{fees.highFee}</td>
       <td>{getHrFeeAvg}</td>
-      <td>{data.price}</td>
+      <td>{getPrice}</td>
     </tr>
     );
 }
