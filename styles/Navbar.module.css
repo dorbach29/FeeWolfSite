@@ -6,7 +6,7 @@
   } 
 
 .navbar {
-    background-color: #166088;
+    background-color: #3a86ff;
     margin-top: 0px;
 }
 
@@ -18,18 +18,19 @@
 }
 
 .navbar li {
-    height: 3rem;
+    height: 4rem;
 }
 
 .navbar li:hover {
-    background-color: #267098; 
+    background-color: #4a96ff; 
 }
 
 .navbar a {
     padding: 0 0.5rem;
     text-align: center;
-    height: 3rem;
-    line-height: 3rem;
+    height: 4rem;
+    line-height: 4rem;
     width: 100%;
     display: flex;
+    font-weight: 450;
 }
