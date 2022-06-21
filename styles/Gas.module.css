@@ -9,6 +9,10 @@
     align-items: flex-start;
 }
 
+.main p{
+    font-size: 17px;
+}
+
 .title {
     margin: 0;
     line-height: 1.15;
@@ -42,11 +46,15 @@
 }
 
 .dataRow td{
-    font-weight: 500;
+    font-weight: 450;
 }
 
 .coinName{
     vertical-align: middle;
+}
+
+.coinName:hover{
+   color: #EC368D;
 }
 
 .coinNameContainer{
@@ -57,7 +65,7 @@
 
 .coinNameContainer p{
     margin: 0.5em 0;
-    font-weight: bold;
+    font-weight: Bold;
 }
 
 
