@@ -1,4 +1,5 @@
 import List from "./List"
+import DefaultList from "./DefaultList" 
 import styles from '../../styles/Exchange.module.css'
 
 /**
@@ -12,9 +13,16 @@ import styles from '../../styles/Exchange.module.css'
 export default function DataView(props){
 
     const formSubmitted = props.formSubmitted
-    //const listData = props.listData
+    const listData = props.listData
 
-    const listData = [{}, {}, {}]
+    /**
+     * To dou
+     */
+    
+
+    const defaultData = [{
+
+    }]
      
     if(formSubmitted) return (
         <>
@@ -22,13 +30,15 @@ export default function DataView(props){
         <p> 
         This is a disclaimer regarding this site.
         Hopefully this will rid us of all legal worries we may have.
-        I am not a lawyer. If you sue us you are a b****
+        I am not a lawyer. If you sue us you suck
         </p>
         </>
     );
+
+    //It may be useful to have this second list be a seperate component in the future, as it will likely be static meaning there is no need to dynamically render it
     else return (
         <>
-         <List></List>
+         <DefaultList></DefaultList>
         </>
 
     )

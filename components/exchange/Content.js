@@ -10,8 +10,6 @@ export default function Content(){
     //Props that are passed down to the List
     const [formSubmitted , setFormSubmitted ] = useState(false)
     const [listData, setListData] = useState({/**Initial List */})
-
-
     //Form Data
     const [inputVolume, setInputVolume] = useState(25); //
 
@@ -23,8 +21,33 @@ export default function Content(){
          * on completion of GET Request the function will update the List Component
          * with the correct Data
          */
+
+        
+
         event.preventDefault();
         setFormSubmitted(true);
+
+        //Replace with actual list data
+        setListData([{
+
+          exchange : "Binance",
+          recivedUSD: 997,
+          recivedCrypto: 0.01,
+          logoLink: "/Exchanges/BinanceLogo.png",
+      }, 
+      {
+          exchange : "Coinbase",
+          recivedUSD: 997,
+          recivedCrypto: 0.01,
+          logoLink: "/Exchanges/CoinbaseLogo.png"
+      }, 
+      {
+          exchange : "Kucoin",
+          recivedUSD: 997,
+          recivedCrypto: 0.01,
+          logoLink: "/Exchanges/KucoinLogo.png"
+      }
+  ])
     }
 
     function onChange(event){
