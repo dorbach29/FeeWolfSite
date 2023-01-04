@@ -1,5 +1,5 @@
 import styles from '../../styles/Exchange.module.css' 
-import Image from "next/Image"
+import Image from "next/image"
 
 
 export default function ListElement(props){

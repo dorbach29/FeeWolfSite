@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import Image from "next/Image"
+import Image from "next/image"
 import socket from "../Socket"
 import styles from "../../styles/Gas.module.css"
 
