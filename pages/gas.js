@@ -8,7 +8,8 @@ import styles from '../styles/Gas.module.css'
 /**
  * Page with the listed gas prices for all of the coins
  */
-export default function Gas() {
+export default function Gas(props) {
+
 
   
   
@@ -31,9 +32,33 @@ export default function Gas() {
         <h3>
           Top Coins
         </h3>
-        <GasTable />
+        {!props.Error && 
+          <GasTable coins={props.coins}/>
+        }
+        {props.Error && 
+          "Error Loading Coins"
+        }
       </main>
 
     </>
   )
+}
+
+export async function getServerSideProps(context){
+  try {
+    let data = await fetch("http://localhost:5000/gas/allData");
+    data = await data.json()
+    return {
+      props : {"Error" : false, "coins" : data}
+    }
+
+  } catch (error){
+    return {
+      props : {
+        "Error" : error.toString(),
+
+      }
+    }
+  }
+
 }

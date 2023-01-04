@@ -20,18 +20,19 @@ import styles from "../../styles/Gas.module.css"
  * 
  */
 export default function TableRow(props){
-    let data = props.data;
-    let feeProps = data.fees;
+    let coinGasInfo = props.coinGasInfo;
+    let coinMetaInfo = props.coinMetaInfo
+    let feeProps = coinGasInfo.fees;
 
 
     //State that represents current gasFee for this coin
     const [fees, setFees] = useState(feeProps);
-    const [getPrice, setPrice] = useState(data.price);
-    const [getHrFeeAvg, setHrFeeAvg] = useState(data.hrFeeAvg);
+    const [getPrice, setPrice] = useState(coinGasInfo.price);
+    const [getHrFeeAvg, setHrFeeAvg] = useState(coinGasInfo.hrFeeAvg);
 
     //Updates the current fees object on the proper socket events
     useEffect(()=> {
-      socket.on(data.socketEvent, (args)=>{
+      socket.on(coinMetaInfo.socketEvent, (args)=>{
         if(args.fees.medFee != -1) setFees(args.fees);
         if(args.hrFeeAvg != -1 && args.hrFeeAvg != getHrFeeAvg) setHrFeeAvg(args.hrFeeAvg);
         if(args.price != -1 && args.price != getPrice) setPrice(args.price);
@@ -44,13 +45,13 @@ export default function TableRow(props){
         <div className={styles.coinNameContainer}>
           <div className={styles.Logo}>
             <Image
-            src={data.logoLink}
-            alt={data.logoDesc}
+            src={coinMetaInfo.logoLink}
+            alt={coinMetaInfo.logoDesc}
             width={20}
             height={23}>
             </Image>
           </div>
-          <p>{data.name}</p>
+          <p>{coinMetaInfo.name}</p>
         </div>
       </td>
       <td>{fees.lowFee}</td> 
