@@ -1,5 +1,6 @@
 import styles from '../../styles/Exchange.module.css' 
 import Image from "next/Image"
+import ListElement from './ListElement'
 
 
 export default function List(props){
@@ -23,22 +24,8 @@ export default function List(props){
                 {/** Generates a list of crypto exchanges from the listData */}
 
                 {listData.map(exchange => {
-                    console.log("Bam")
                     return (
-                    <li className={styles.cardContainer}>
-                        <div className={styles.card}>
-                            <div className={styles.logo}>
-                                <Image
-                                src={exchange.logoLink}
-                                width={20}
-                                height={23}>
-                                </Image>
-                            </div>        
-                            <div className={styles.cardName}>{exchange.exchange}</div>
-                            <div className={styles.cardWithdrawl}>{exchange.recivedCrypto}</div>
-                            <div className={styles.cardFee}>{exchange.recivedUSD}</div>
-                        </div>
-                    </li>
+                        <ListElement exchange={exchange}></ListElement>
                     )
                 })}
                 

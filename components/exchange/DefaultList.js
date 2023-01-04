@@ -1,18 +1,22 @@
 import styles from '../../styles/Exchange.module.css' 
 import Image from "next/Image"
 
+
+//! NOT CURRENTLY BEING USED
 export default function List(props){
     return(
         <>
             <ul>
+            {/** List Heading */}
             <li className={styles.cardContainer} >
-                    <div className={styles.card}>
+                    <div className={styles.cardTitle}>
+                        <div className={styles.logo}></div>
                         <div className={styles.cardName}>Exchange</div>
-                        <div className={styles.cardWithdrawl}>Withdrawl Fee Range Under $100</div>
-                        <div className={styles.cardFee}>Reviews</div>
-
+                        <div className={styles.cardWithdrawl}>Crypto Recieved</div>
+                        <div className={styles.cardFee}>USD Equivalent</div>
                     </div>
-                </li>
+            </li>
+
                 <li className={styles.cardContainer}>
                     <div className={styles.card}>
                         <div className={styles.cardName}>Binance</div>

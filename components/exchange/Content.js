@@ -8,10 +8,31 @@ import styles from '../../styles/Exchange.module.css'
 export default function Content(){
 
     //Props that are passed down to the List
-    const [formSubmitted , setFormSubmitted ] = useState(false)
-    const [listData, setListData] = useState({/**Initial List */})
+    const [listData, setListData] = useState([
+      {
+        exchange : "Coinbase",
+        recivedUSD: 997,
+        recivedCrypto: 0.01,
+        logoLink: "/Exchanges/CoinbaseLogo.png"
+      }, 
+      {
+        exchange : "Kucoin",
+        recivedUSD: 997,
+        recivedCrypto: 0.01,
+        logoLink: "/Exchanges/KucoinLogo.png"
+      },
+
+      {
+
+        exchange : "Binance",
+        recivedUSD: 997,
+        recivedCrypto: 0.01,
+        logoLink: "/Exchanges/BinanceLogo.png",
+      }, 
+
+    ])
     //Form Data
-    const [inputVolume, setInputVolume] = useState(25); //
+    const [inputVolume, setInputVolume] = useState(100); //
 
     
     function handleSubmit(event){
@@ -25,7 +46,6 @@ export default function Content(){
         
 
         event.preventDefault();
-        setFormSubmitted(true);
 
         //Replace with actual list data
         setListData([{
@@ -66,7 +86,7 @@ export default function Content(){
           <input type="submit" value="Find Exchanges"></input>
         </div>
       </form>
-      <DataView formSubmitted={formSubmitted} listData={listData}></DataView>
+      <DataView listData={listData}></DataView>
     </div>
     
     )

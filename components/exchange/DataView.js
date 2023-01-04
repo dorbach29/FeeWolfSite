@@ -12,19 +12,9 @@ import styles from '../../styles/Exchange.module.css'
 
 export default function DataView(props){
 
-    const formSubmitted = props.formSubmitted
     const listData = props.listData
-
-    /**
-     * To dou
-     */
     
-
-    const defaultData = [{
-
-    }]
-     
-    if(formSubmitted) return (
+    return (
         <>
         <List listData={listData}></List>
         <p> 
@@ -35,6 +25,7 @@ export default function DataView(props){
         </>
     );
 
+    /*
     //It may be useful to have this second list be a seperate component in the future, as it will likely be static meaning there is no need to dynamically render it
     else return (
         <>
@@ -42,5 +33,6 @@ export default function DataView(props){
         </>
 
     )
+    */
 
 }
