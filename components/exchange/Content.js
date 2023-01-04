@@ -10,26 +10,31 @@ export default function Content(){
     //Props that are passed down to the List
     const [listData, setListData] = useState([
       {
+        exchangeId: 1,
         exchange : "Coinbase",
         recivedUSD: 997,
         recivedCrypto: 0.01,
-        logoLink: "/Exchanges/CoinbaseLogo.png"
+        logoLink: "/Exchanges/CoinbaseLogo.png",
+        logoAlt: "Coinbase Logo",
       }, 
       {
+        exchangeId: 2,
         exchange : "Kucoin",
         recivedUSD: 997,
         recivedCrypto: 0.01,
-        logoLink: "/Exchanges/KucoinLogo.png"
+        logoLink: "/Exchanges/KucoinLogo.png",
+        logoAlt: "Kucoin Logo",
+
       },
 
       {
-
+        exchangeId: 3,
         exchange : "Binance",
         recivedUSD: 997,
         recivedCrypto: 0.01,
         logoLink: "/Exchanges/BinanceLogo.png",
+        logoAlt: "Binance Logo",
       }, 
-
     ])
     //Form Data
     const [inputVolume, setInputVolume] = useState(100); //

@@ -12,6 +12,7 @@ export default function ListElement(props){
                 <div className={styles.logo}>
                     <Image
                     src={exchange.logoLink}
+                    alt={exchange.logoAlt}
                     width={20}
                     height={23}>
                     </Image>

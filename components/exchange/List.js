@@ -25,7 +25,7 @@ export default function List(props){
 
                 {listData.map(exchange => {
                     return (
-                        <ListElement exchange={exchange}></ListElement>
+                        <ListElement key={exchange.exchangeId} exchange={exchange}></ListElement>
                     )
                 })}
                 
