@@ -35,13 +35,16 @@ export default function Home() {
             </a>
           </Link>
 
-          <a
-            href="/about"
-            className={styles.card}
-          >
-            <h2>About &rarr;</h2>
-            <p>FeeWolf's mission and story</p>
-          </a>
+
+          <Link href="/about">
+            <a
+              href="/about"
+              className={styles.card}
+            >
+              <h2>About &rarr;</h2>
+              <p>FeeWolf's mission and story</p>
+            </a>
+          </Link>
 
 
         </div>
