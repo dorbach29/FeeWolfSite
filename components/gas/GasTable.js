@@ -29,7 +29,7 @@ export default function GasTable(props){
           </thead>
           <tbody>
             {/**Loads different rows of coins */}
-            {coins.map((coin)=> {
+            {coins?.map((coin)=> {
               return (<TR key={coin.coinMetaInfo.key} coinGasInfo={coin.coinGasInfo} coinMetaInfo={coin.coinMetaInfo}></TR>);
             })}
  

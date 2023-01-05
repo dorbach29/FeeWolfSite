@@ -1,0 +1,54 @@
+/*This file contains styles relating to default settings in the page (AKA left alignment of text and so on*/
+
+/*The following styles are the same as gas consider making a few default stylesheets in the future*/
+
+
+.main {
+    min-height: 100vh;
+}
+
+.header {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 3rem;
+}
+
+.subtitle {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 2rem;  
+    color:  #FC469D;
+}
+
+.content{
+    padding-bottom: 4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form{
+    text-align: center;
+}
+
+
+
+
+
+
+.main p{
+    font-size: 22px;
+    line-height: 28px;
+}
+
