@@ -29,7 +29,7 @@ export default function Home() {
           </Link>
 
           <Link href="/gas">  
-            <a href="https://nextjs.org/learn" className={styles.card}>
+            <a className={styles.card}>
               <h2>Gas &rarr;</h2>
               <p>Chose the best time to make transactions by tracking current gas fees</p>
             </a>
@@ -37,12 +37,9 @@ export default function Home() {
 
 
           <Link href="/about">
-            <a
-              href="/about"
-              className={styles.card}
-            >
+            <a className={styles.card} >
               <h2>About &rarr;</h2>
-              <p>FeeWolf's mission and story</p>
+              <p>The FeeWolf mission and story</p>
             </a>
           </Link>
 
