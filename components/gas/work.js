@@ -27,7 +27,7 @@ export default function WorkInProgress(props) {
           The page shows the gas fee in gwei for different cryptocurrencies. To calculate the total fee for any particular transaction refer to our gas guide for the respective coin.
         </p>
         <p>
-          Unfortunately do to site maintance costs this page was removed. We are working on optimzizing it and will re-add it in the future.
+          Unfortunately due to site maintance costs this page was removed. We are working on optimzizing it and will re-add it in the future.
         </p>
       </main>
 
