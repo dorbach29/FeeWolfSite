@@ -10,7 +10,9 @@ export default function List(props){
     return(
         <>
             <ul>
-            {/** List Heading */}
+            {/** List Heading
+             * TODO: Change so that is uses the proper list heading
+             */}
             <li className={styles.cardContainer} >
                     <div className={styles.cardTitle}>
                         <div className={styles.logo}></div>
