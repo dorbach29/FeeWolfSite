@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Content from '../components/exchange/Content'
 import styles from '../styles/Exchange.module.css'
 
-export default function About() {
+export default function Exchange(props) {
+  let defaultListData = props.listData;
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +22,7 @@ export default function About() {
           </h3>
         </div>
         <div className={styles.content}>
-          <Content></Content>
+          <Content defaultListData={defaultListData}></Content>
         </div>
 
 
@@ -30,4 +31,27 @@ export default function About() {
 
     </div>
   )
+}
+
+
+export async function getServerSideProps(context){
+  
+  
+  try{
+    let data = await fetch("http://localhost:5000/exchange/cheapest?amount=100");
+    data = await data.json();
+    return {
+      props : {"listData" : data}
+    }
+  }
+
+  catch(error){
+    return { 
+      props : {
+        "Error" : true,
+        "Error" : error.toString(),
+
+      }
+    }
+  }
 }

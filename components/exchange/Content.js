@@ -5,48 +5,10 @@ import styles from '../../styles/Exchange.module.css'
 
 
 
-export default function Content(){
-    
+export default function Content(props){
+    let {defaultListData} = props;
     //Props that are passed down to the List
-    const [listData, setListData] = useState([
-        {
-            logoLink : "/Exchanges/Coinbase.png",
-            logoDesc : "Coinbase Logo",
-            name : "Coinbase",
-            exchangeID: 1,
-        },
-        {
-            logoLink : "/Exchanges/Gemini.png",
-            logoDesc : "Gemini Logo",
-            name : "Gemini",
-            exchangeID: 2,
-        },
-        {
-            logoLink : "/Exchanges/Kucoin.png",
-            logoDesc : "Kucoin Logo",
-            name: "Kucoin",
-            exchangeID: 3,
-        },
-       {
-            logoLink : "/Exchanges/Binance.png",
-            logoDesc : "Binance Logo",
-            name: "Binance",
-            exchangeID: 4,
-        },
-        {
-            logoLink : "/Exchanges/CryptoCom.png",
-            logoDesc : "CryptoCom Logo",
-            name: "CryptoCom",
-            exchangeID: 5,
-        },
-        {
-            logoLink : "/Exchanges/FTX.png",
-            logoDesc : "FTX Logo",
-            name: "FTX",
-            exchangeID: 13,
-        },
-    ])
-    //Form Data
+    const [listData, setListData] = useState(defaultListData)
     const [inputVolume, setInputVolume] = useState(100); //
 
     
@@ -69,7 +31,8 @@ export default function Content(){
          *
          */
         try{
-            let data = await fetch("http://localhost:5000/exchange/cheapest");
+            //Include the specific amount in the query. 
+            let data = await fetch(`http://localhost:5000/exchange/cheapest?amount=${inputVolume}`);
             data = await data.json();
             setListData(data);
         }

@@ -14,13 +14,13 @@ export default function ListElement(props){
             <div className={styles.card}>
                 <div className={styles.logo}>
                     <Image
-                    src={exchange.logoLink}
-                    alt={exchange.logoDesc}
+                    src={exchange.metadata.logoLink}
+                    alt={exchange.metadata.logoDesc}
                     width={20}
                     height={23}>
                     </Image>
                 </div>        
-                <div className={styles.cardName}>{exchange.name}</div>
+                <div className={styles.cardName}>{exchange.metadata.name}</div>
                 <div className={styles.cardFee}>{exchange.amount}</div>
             </div>
         </li>
