@@ -30,6 +30,8 @@ export async function getServerSideProps(context){
       props : {"Error" : false, "coins" : data}
     }
 
+    //For Exchange: setListData(data); before returning. 
+
   } catch (error){
     return {
       props : {

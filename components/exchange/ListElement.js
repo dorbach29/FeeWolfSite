@@ -5,7 +5,10 @@ import Image from "next/image"
 export default function ListElement(props){
 
     const exchange = props.exchange;
-
+    /**
+     * TODO: Chance ListElement to use the correct metaData properties
+     * Whever you see exchange.something 
+     */
     return (
         <li className={styles.cardContainer}>
             <div className={styles.card}>

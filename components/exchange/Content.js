@@ -6,7 +6,7 @@ import styles from '../../styles/Exchange.module.css'
 
 
 export default function Content(){
-
+    
     //Props that are passed down to the List
     const [listData, setListData] = useState([
       {
@@ -40,7 +40,7 @@ export default function Content(){
     const [inputVolume, setInputVolume] = useState(100); //
 
     
-    function handleSubmit(event){
+    async function handleSubmit(event){
         /**
          * This function handles the submit event for the form
          * In the future this function will make a call to the server with data
@@ -51,6 +51,12 @@ export default function Content(){
         
 
         event.preventDefault();
+
+        /**
+         * TODO: using fetch, call the api with the correct amount
+         * TODO: parse the data
+         * TODO: setListData
+         */
 
         //Replace with actual list data
         setListData([{
