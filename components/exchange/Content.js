@@ -9,32 +9,42 @@ export default function Content(){
     
     //Props that are passed down to the List
     const [listData, setListData] = useState([
-      {
-        exchangeId: 1,
-        exchange : "Coinbase",
-        recivedUSD: 997,
-        recivedCrypto: 0.01,
-        logoLink: "/Exchanges/CoinbaseLogo.png",
-        logoAlt: "Coinbase Logo",
-      }, 
-      {
-        exchangeId: 2,
-        exchange : "Kucoin",
-        recivedUSD: 997,
-        recivedCrypto: 0.01,
-        logoLink: "/Exchanges/KucoinLogo.png",
-        logoAlt: "Kucoin Logo",
-
-      },
-
-      {
-        exchangeId: 3,
-        exchange : "Binance",
-        recivedUSD: 997,
-        recivedCrypto: 0.01,
-        logoLink: "/Exchanges/BinanceLogo.png",
-        logoAlt: "Binance Logo",
-      }, 
+        {
+            logoLink : "/Exchanges/Coinbase.png",
+            logoDesc : "Coinbase Logo",
+            name : "Coinbase",
+            exchangeID: 1,
+        },
+        {
+            logoLink : "/Exchanges/Gemini.png",
+            logoDesc : "Gemini Logo",
+            name : "Gemini",
+            exchangeID: 2,
+        },
+        {
+            logoLink : "/Exchanges/Kucoin.png",
+            logoDesc : "Kucoin Logo",
+            name: "Kucoin",
+            exchangeID: 3,
+        },
+       {
+            logoLink : "/Exchanges/Binance.png",
+            logoDesc : "Binance Logo",
+            name: "Binance",
+            exchangeID: 4,
+        },
+        {
+            logoLink : "/Exchanges/CryptoCom.png",
+            logoDesc : "CryptoCom Logo",
+            name: "CryptoCom",
+            exchangeID: 5,
+        },
+        {
+            logoLink : "/Exchanges/FTX.png",
+            logoDesc : "FTX Logo",
+            name: "FTX",
+            exchangeID: 13,
+        },
     ])
     //Form Data
     const [inputVolume, setInputVolume] = useState(100); //
@@ -56,29 +66,19 @@ export default function Content(){
          * TODO: using fetch, call the api with the correct amount
          * TODO: parse the data
          * TODO: setListData
+         *
          */
-
+        try{
+            let data = await fetch("http://localhost:5000/exchange/cheapest");
+            data = await data.json();
+            setListData(data);
+        }
+        catch(error){
+          return{
+              "Error": true,
+          }
+        }
         //Replace with actual list data
-        setListData([{
-
-          exchange : "Binance",
-          recivedUSD: 997,
-          recivedCrypto: 0.01,
-          logoLink: "/Exchanges/BinanceLogo.png",
-      }, 
-      {
-          exchange : "Coinbase",
-          recivedUSD: 997,
-          recivedCrypto: 0.01,
-          logoLink: "/Exchanges/CoinbaseLogo.png"
-      }, 
-      {
-          exchange : "Kucoin",
-          recivedUSD: 997,
-          recivedCrypto: 0.01,
-          logoLink: "/Exchanges/KucoinLogo.png"
-      }
-  ])
     }
 
     function onChange(event){
