@@ -20,7 +20,7 @@ export default function About() {
             Our mission is to empower people to make better decisions with crypto
         </h3>
         <p>
-            Wether that person is new to the crypto world and looking to buy their first ethereum coins or a veteran crypto trader looking to optimize their transactions. We built FeeWolf to allow them to know what hidden fees may be associated with any transaction and how to minimize the costs that they face.
+            Whether that person is new to the crypto world and looking to buy their first ethereum coins or a veteran crypto trader looking to optimize their transactions. We built FeeWolf to allow them to know what hidden fees may be associated with any transaction and how to minimize the costs that they face.
         </p>
         <p>
             FeeWolf was founded by Tom Bonagura and Daniel Orbach in summer 2022. The site was built as a hobby project using Node.js and React.js. As the site was expanded MongoDB was added to the stack to help optimize requests. While the gas fee page became too expensive to host it will be added back in the future. 

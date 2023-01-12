@@ -17,8 +17,7 @@ export default function List(props){
                     <div className={styles.cardTitle}>
                         <div className={styles.logo}></div>
                         <div className={styles.cardName}>Exchange</div>
-                        <div className={styles.cardWithdrawl}>Crypto Recieved</div>
-                        <div className={styles.cardFee}>USD Equivalent</div>
+                        <div className={styles.cardFee}>Crypto Recieved (USD)</div>
 
                     </div>
                 </li>
